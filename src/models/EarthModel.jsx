@@ -17,7 +17,7 @@ export default function Earth(props) {
   const { camera } = useThree();
 
   const CAMERA_OFFSET = { x: 5, y: 2, z: 5 };
-  const CAMERA_SPEED = 0.4;
+  const CAMERA_SPEED = 0.2;
   useFrame((state) => {
     // state.camera.position.x += 0.01;
     const time = state.clock.elapsedTime.toFixed(2);
@@ -34,14 +34,6 @@ export default function Earth(props) {
       meshRef.current.position.y,
       meshRef.current.position.z
     );
-    gsap.timeline().to(state.camera.position, {
-      duration: 1,
-      repeat: 0,
-      x: 3,
-      y: 3,
-      z: 2,
-      ease: "power3.inOut",
-    });
   });
   useEffect(() => {});
 
